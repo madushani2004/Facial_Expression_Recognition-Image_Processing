@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facial Expression Recognition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Facial Expression Recognition</h1>
+    <div class="upload-section">
+      <input type="file" id="upload" accept="image/*" style="display: none;">
+      <label for="upload" class="upload-btn">Choose<br>Image</label>
+      <button class="process-btn" onclick="handleUpload()">Upload and Detect Expression</button>
+    </div>
+    <div class="image-section">
+      <img id="inp" style="max-width: 100%; height: auto; margin: 20px;">
+      <div id="result" class="result">
+        <img id="image" class="image" src="" alt="Detected Image" style="display: none;">
+        <p id="expression" class="expression"></p>
+      </div>
+    </div>
+    <h2>Additional Image Processing</h2>
+    <button class="process-btn" onclick="toggleProcessingButtons()">For More Options<br>Click Here</button>
+    <div id="buttons-section" class="buttons-section" style="display: none;">
+      <button class="process-btn" onclick="processImage('canny')">Canny Edge Detection</button>
+      <button class="process-btn" onclick="processImage('gaussian')">Gaussian Blur</button>
+      <button class="process-btn" onclick="processImage('equalize')">Histogram Equalization</button>
+      <button class="process-btn" onclick="processImage('rotate')">Rotate Image</button>
+      <button class="process-btn" onclick="processImage('dilate')">Dilate Image</button>
+      <button class="process-btn" onclick="processImage('hsv')">Convert to HSV</button>
+    </div>
+    <img id="output" style="max-width: 100%; height: auto; margin: 20px;">
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
